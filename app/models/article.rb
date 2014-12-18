@@ -3,6 +3,8 @@ class Article < ActiveRecord::Base
 
   belongs_to :user
 
+  scope :published, -> { where(status: 'published') }
+
   def published?
     status == "published"
   end
