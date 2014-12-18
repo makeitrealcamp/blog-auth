@@ -5,4 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :articles
+
+  enum role: [:administrator, :publisher, :reader]
+
 end
